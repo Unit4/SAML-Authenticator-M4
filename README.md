@@ -30,7 +30,6 @@ The SAML 2.0 token sent back from the Security Token Service (STS) contains clai
 to identify an Agresso user. The mapping logic of this authenticator will lookup users by the 
 "Domain user" (User master file / `TAG064` -> Security -> Single sign-on -> Domain user) field.
 
-
 DEPENDENCIES
 ------------
 
@@ -40,7 +39,7 @@ DEPENDENCIES
 INSTALLATION
 ------------
 
-Installation is done in the Agresso Desktop client.
+Installation is done in the Agresso Desktop client (aka Smart Client).
 
 Install this custom authenticator through the Authenticators screen `TAG107`.
 - Add authenticator and locate the U4A.ClaimsAuthenticator.dll
