@@ -55,25 +55,24 @@ Install this custom authenticator through the Authenticators screen (TAG107).
 CONFIGURATION
 -------------
 
-**Step 1 - Configure web applications**
-Edit web.config of Agresso Web and/or Agresso Web (classic). Inspect the template 
-(selfservice-template.web.config) file in this package.
+* **Step 1 - Configure web applications**
+  Edit web.config of Agresso Web and/or Agresso Web (classic). Inspect the template 
+  (selfservice-template.web.config) file in this package.
 
-The template contains comments like "<!-- FED add as is FED -->" in the beginning and the end of 
-elements that needs to be changed compared to the existing web.config of your application. The 
-comment between "FED" and "FED" indicates the type of change. "Add as is" means copy/paste, for
-example.
+  The template contains comments like "<!-- FED add as is FED -->" in the beginning and the end of 
+  elements that needs to be changed compared to the existing web.config of your application. The 
+  comment between "FED" and "FED" indicates the type of change. "Add as is" means copy/paste, for
+  example.
 
-**Step 2 - Configure STS**
-Since Agresso Web do not have any FederationMetadata.xml (Milestone 5 only), the STS must be manually
-configured with the Agresso Web as a Relying Party. Also setup claims according to mapping 
-configuration (see Step 3).
+* **Step 2 - Configure STS**
+  Since Agresso Web do not have any FederationMetadata.xml (Milestone 5 only), the STS must be manually
+  configured with the Agresso Web as a Relying Party. Also setup claims according to mapping 
+  configuration (see Step 3).
 
-**Step 3 - Mapping**
-Each Agresso user must be configured with the federated identity claim used for mapping. The E-Mail
-claim can be used, for example. In that case, add E-Mail accordingly for each user to the "Domain user" 
-field in User master file.
-
+* **Step 3 - Mapping**
+  Each Agresso user must be configured with the federated identity claim used for mapping. The E-Mail
+  claim can be used, for example. In that case, add E-Mail accordingly for each user to the "Domain user" 
+  field in User master file.
 
 KNOWN LIMITATIONS
 -----------------
