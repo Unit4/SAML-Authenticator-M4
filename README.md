@@ -81,9 +81,9 @@ KNOWN LIMITATIONS
 
 **Continue button to login**
 
-Milestone 4 Update 1 needs the STS to redirect back to the /System/Login.aspx page to avoid the "Continue" 
-button click. Since ADFS does not honor the wreply parameter, always link to /System/Login.aspx. This will 
-make the wtrealm parameter and the redirect to Agresso Web will be correct.
+Milestone 4 Update 1 needs the STS to redirect back to the /System/Login.aspx page to avoid the "Continue"-button 
+click. Since ADFS does not honor the wreply parameter, always link to /System/Login.aspx. This will 
+make the wtrealm parameter and the redirect leads to a direct login (without the need of clicking the "Continue"-button).
 
 Windows Azure Active Directory (WAAD) does honor wreply, so use this attribute in the wsFederation element
 in the Identity Model configuration of web.config.
