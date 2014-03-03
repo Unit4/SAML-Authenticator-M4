@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Agresso.Foundation;
 using Agresso.Foundation.Extension.NamedEvents;
 using Microsoft.IdentityModel.Claims;
 using U4A.ClaimsAuthenticator.IdentityModel;

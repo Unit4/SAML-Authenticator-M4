@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.UI;
-using Agresso.Foundation;
+﻿using Agresso.Foundation;
 using Agresso.Foundation.Diagnostics;
 using Agresso.Interface.Authentication;
 using Agresso.Interface.Authentication.SingleStage;
 using Agresso.Interface.CoreServices;
 using Microsoft.IdentityModel.Claims;
 using Microsoft.IdentityModel.Web;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Web;
 using U4A.ClaimsAuthenticator.IdentityModel;
 using U4A.ClaimsAuthenticator.Mapping;
 

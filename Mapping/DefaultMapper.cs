@@ -1,8 +1,6 @@
-﻿using System;
+﻿using Microsoft.IdentityModel.Claims;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Microsoft.IdentityModel.Claims;
 using U4A.ClaimsAuthenticator.IdentityModel;
 
 namespace U4A.ClaimsAuthenticator.Mapping

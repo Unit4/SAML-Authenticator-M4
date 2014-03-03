@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Agresso.Foundation.Diagnostics;
+﻿using Agresso.Foundation.Diagnostics;
 using Agresso.Interface.CoreServices;
 using Microsoft.IdentityModel.Claims;
+using System.Collections.Generic;
+using System.Linq;
 using U4A.ClaimsAuthenticator.IdentityModel;
 
 namespace U4A.ClaimsAuthenticator.Mapping
