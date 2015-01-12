@@ -17,7 +17,7 @@ only. Limitations compared to the Milestone 5 functionality:
 * Single sign-out
 * FederationMetadata XML for easy setup of Relying Party
 
-R&D is very happy to receive feedback!
+R&D is very happy to receive feedback.
 
 INTRODUCTION
 ------------
