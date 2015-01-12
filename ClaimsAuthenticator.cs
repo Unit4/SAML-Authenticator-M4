@@ -11,6 +11,7 @@ using System.Linq;
 using System.Web;
 using U4A.ClaimsAuthenticator.IdentityModel;
 using U4A.ClaimsAuthenticator.Mapping;
+using System;
 
 namespace U4A.ClaimsAuthenticator
 {
@@ -56,7 +57,7 @@ namespace U4A.ClaimsAuthenticator
             var claimsIdentity = claimsPrincipal.Identity as ClaimsIdentity;
 
             if (claimsIdentity == null || (claimsPrincipal.Identity.IsAuthenticated && null != claimsIdentity.Claims && claimsIdentity.Claims.Any()))
-                if (claimsIdentity != null) return GetUserAndCheckAccess(claimsIdentity.Claims.ToList());
+                if (claimsIdentity != null) return GetUserAndCheckAccess(claimsIdentity);
 
             Log.Write("Federation: Claim Authenticator cannot find valid/authenticated Claims Principal. Can't proceed with user mapping.",
                 TraceEventType.Warning,
@@ -66,8 +67,11 @@ namespace U4A.ClaimsAuthenticator
             return response.DenyAccess();
         }
 
-        internal Response GetUserAndCheckAccess(IList<Claim> claims)
+
+
+        internal Response GetUserAndCheckAccess(ClaimsIdentity claimsIdentity)
         {
+            IList<Claim> claims = claimsIdentity.Claims.ToList();
             LogClaims(claims);
 
             var response = new Response();
@@ -81,6 +85,10 @@ namespace U4A.ClaimsAuthenticator
                     string claimClient;
                     var client = string.IsNullOrEmpty(claimClient = GetClientClaim(claims)) ? userInfo.DefaultClient : claimClient;
                     response = CheckAccess(userInfo, client);
+                    if (response.Authenticated)
+                    {
+                        AddUserIdAndClientClaims(claimsIdentity, client, userInfo.UserId);
+                    }
                 }
 
                 if (response.Authenticated) return response;
@@ -101,6 +109,19 @@ namespace U4A.ClaimsAuthenticator
             }
 
             return response;
+        }
+
+        private void AddUserIdAndClientClaims(ClaimsIdentity claimsIdentity, string client, string userId)
+        {
+            if (!claimsIdentity.Claims.Exists(new Predicate<Claim>(claim => claim.ClaimType == "http://agresso.services.com/schema/identity/claims/client")))
+            {
+                claimsIdentity.Claims.Add(new Claim("http://agresso.services.com/schema/identity/claims/client", string.IsNullOrEmpty(client) ? "" : client));
+            }
+            if (!claimsIdentity.Claims.Exists((new Predicate<Claim>(claim => claim.ClaimType == "http://agresso.services.com/schema/identity/claims/userid"))))
+            {
+                claimsIdentity.Claims.Add(new Claim("http://agresso.services.com/schema/identity/claims/userid", userId));
+
+            }
         }
 
         private void LogClaims(IEnumerable<Claim> claims)

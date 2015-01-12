@@ -35,24 +35,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ACT">
-      <HintPath>..\..\..\..\..\..\devagr\571\bindebug\ACT.dll</HintPath>
-    </Reference>
-    <Reference Include="Agresso.Base">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\devagr\571\bindebug\Agresso.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Agresso.Interface.Authentication">
-      <HintPath>..\..\..\..\..\..\devagr\571\bindebug\Agresso.Interface.Authentication.dll</HintPath>
-    </Reference>
-    <Reference Include="Agresso.Interface.CoreServices">
-      <HintPath>..\..\..\..\..\..\devagr\571\bindebug\Agresso.Interface.CoreServices.dll</HintPath>
-    </Reference>
+    <Reference Include="ACT"/>
+    <Reference Include="Agresso.Base"/>
+    <Reference Include="Agresso.Interface.Authentication"/>
+    <Reference Include="Agresso.Interface.CoreServices"/>
     <Reference Include="Microsoft.IdentityModel">
       <Private>True</Private>
       <HintPath>packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.IdentityModel" />
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
