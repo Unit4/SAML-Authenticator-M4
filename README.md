@@ -1,12 +1,12 @@
 SAML-Authenticator-M4
-=====================
+---------------------
 
-UNIT4 Agresso Milestone 4 Update 1 Custom claims based authenticator supporting SAML 2.0 tokens over the WS-Federation protocol.
+Custom claims based authenticator supporting SAML 2.0 tokens over the WS-Federation protocol.
 
-DISCLAIMER
-----------
-This authenticator is for test purposes only. It is unsupported and used at own risk. It will
-only work for Agresso Business World Milestone 4 Update 1.
+### DISCLAIMER
+
+This authenticator is used at own risk. UNIT4 is not responsible for any damages caused by using 
+this authenticator.
 
 Federated identity authentication is delivered as standard functionality with Milestone 5. This 
 authenticator is a subset of the Milestone 5 delivery and contains the authentication part
@@ -17,10 +17,9 @@ only. Limitations compared to the Milestone 5 functionality:
 * Single sign-out
 * FederationMetadata XML for easy setup of Relying Party
 
-R&D is very happy to receive feedback.
+UNIT4 R&D is very happy to receive feedback!
 
-INTRODUCTION
-------------
+### INTRODUCTION
 
 This custom authenticator enables federated identity authentication for Agresso Web
 and Agresso Web (classic). The functionality is based on Windows Identity Foundation (WIF) 
@@ -30,14 +29,12 @@ The SAML 2.0 token sent back from the Security Token Service (STS) contains clai
 to identify an Agresso user. The mapping logic of this authenticator will lookup users by the 
 "Domain user" (User master file / `TAG064` -> Security -> Single sign-on -> Domain user) field.
 
-DEPENDENCIES
-------------
+### DEPENDENCIES
 
-* Agresso Business World Milestone 4 Update 1
+* Agresso Business World Milestone 4 (>= Update 1)
 * Windows Identity Foundation 3.5
 
-INSTALLATION
-------------
+### INSTALLATION
 
 Installation is done in the Agresso Desktop client (aka Smart Client).
 
@@ -51,8 +48,7 @@ Install this custom authenticator through the Authenticators screen `TAG107`.
     2. Load from database
         - Click upload and locate the U4A.ClaimsAuthenticator.dll
 
-CONFIGURATION
--------------
+### CONFIGURATION
 
 **Step 1 - Configure web applications**
 
@@ -76,12 +72,11 @@ Each Agresso user must be configured with the federated identity claim used for 
 claim can be used, for example. In that case, add E-Mail accordingly for each user to the "Domain user" 
 field in User master file.
 
-KNOWN LIMITATIONS
------------------
+### KNOWN LIMITATIONS
 
 **Continue button to login**
 
-Milestone 4 Update 1 needs the STS to redirect back to the /System/Login.aspx page to avoid the "Continue"-button 
+The Agresso Web (classic) client needs the STS to redirect back to the /System/Login.aspx page to avoid the "Continue"-button 
 click. Since ADFS does not honor the wreply parameter, always link to /System/Login.aspx. This will 
 make the wtrealm parameter and the redirect leads to a direct login (without the need of clicking the "Continue"-button).
 
