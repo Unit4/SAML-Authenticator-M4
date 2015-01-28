@@ -3,7 +3,7 @@ SAML-Authenticator-M4
 
 Custom claims based authenticator supporting SAML 2.0 tokens over the WS-Federation protocol.
 
-### DISCLAIMER
+### Disclaimer
 
 This authenticator is used at own risk. UNIT4 is not responsible for any damages caused by using 
 this authenticator.
@@ -19,7 +19,7 @@ only. Limitations compared to the Milestone 5 functionality:
 
 UNIT4 R&D is very happy to receive feedback!
 
-### INTRODUCTION
+### Introduction
 
 This custom authenticator enables federated identity authentication for Agresso Web
 and Agresso Web (classic). The functionality is based on Windows Identity Foundation (WIF) 
@@ -29,12 +29,12 @@ The SAML 2.0 token sent back from the Security Token Service (STS) contains clai
 to identify an Agresso user. The mapping logic of this authenticator will lookup users by the 
 "Domain user" (User master file / `TAG064` -> Security -> Single sign-on -> Domain user) field.
 
-### DEPENDENCIES
+### Dependencies
 
 * Agresso Business World Milestone 4 (>= Update 1)
 * Windows Identity Foundation 3.5
 
-### INSTALLATION
+### Installation
 
 Installation is done in the Agresso Desktop client (aka Smart Client).
 
@@ -48,7 +48,7 @@ Install this custom authenticator through the Authenticators screen `TAG107`.
     2. Load from database
         - Click upload and locate the U4A.ClaimsAuthenticator.dll
 
-### CONFIGURATION
+### Configuration
 
 **Step 1 - Configure web applications**
 
@@ -72,7 +72,7 @@ Each Agresso user must be configured with the federated identity claim used for 
 claim can be used, for example. In that case, add E-Mail accordingly for each user to the "Domain user" 
 field in User master file.
 
-### KNOWN LIMITATIONS
+### Known limitations
 
 **Continue button to login**
 
@@ -82,3 +82,8 @@ make the wtrealm parameter and the redirect leads to a direct login (without the
 
 Windows Azure Active Directory (WAAD) does honor wreply, so use this attribute in the wsFederation element
 in the Identity Model configuration of web.config.
+
+### License
+
+Copyright (c) 2014-2015 UNIT4
+Released under the MIT license
